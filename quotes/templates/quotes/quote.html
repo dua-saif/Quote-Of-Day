@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote of the Day</title>
+    <link rel="stylesheet" href="{% static 'quotes/style.css' %}">
+</head>
+<body>
+    {% if quote %}
+        <blockquote>
+            <p>{{ quote.text }}</p>
+            <footer>— {{ quote.author }}</footer>
+        </blockquote>
+    {% else %}
+        <p>No quotes found. Add some in admin.</p>
+    {% endif %}
+
+    <form method="get">
+        <button type="submit">Refresh Quote</button>
+    </form>
+</body>
+</html>
+
+
