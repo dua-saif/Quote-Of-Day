@@ -1,12 +1,12 @@
 services:
   - type: web
-    name: quote_project
+    name: quote_site
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn quote_project.wsgi:application
+    startCommand: gunicorn quote_site.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: quote_project.settings
+        value: quote_site.settings
       - key: PYTHON_VERSION
         value: "3.10"
       - key: DATABASE_URL
